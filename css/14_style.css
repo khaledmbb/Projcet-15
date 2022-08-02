@@ -1,0 +1,336 @@
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --mean-color: #f0c546;
+  --black-color: #0a0a0a;
+  --h1-color: #dfdfdf;
+  --transition: 0.3s;
+  --transition-long: 0.6s;
+  --transition-longer: 1.1s;
+}
+
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection,
+h5::selection,
+h6::selection,
+p::selection,
+button::selection,
+li::selection,
+a::selection,
+span::selection,
+img::selection {
+  background-color: #e5be4a9d;
+  color: white;
+}
+
+a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-family: 'Annie Use Your Telescope',
+  cursive;
+  font-family: 'Zen Loop',
+  cursive;
+    font-size: 28px;
+    text-transform: capitalize;
+  cursor: pointer;
+  font-weight: 300;
+}
+
+
+ul {
+  list-style: none;
+}
+ul li {
+    font-size: 26px;
+    font-weight: 300;
+}
+button {
+  cursor: pointer;
+text-transform: capitalize;
+font-family: 'Annie Use Your Telescope',
+cursive;
+font-family: 'Zen Loop',
+cursive;
+user-select: none;
+  border: none;
+  font-size: 28px;
+  font-weight: 600;
+  background-color: var(--mean-color);
+  color: var(--black-color);
+}
+h1 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #dfdfdf;
+}
+h2 {
+  font-size: 35px;
+  font-weight: 600;
+  color: #e5bf4a;
+}
+p {
+  font-size: 25px;
+  font-weight: 600;
+}
+.container {
+  padding: 60px 80px;
+}
+
+@media (max-width:1300px) {
+  .container {
+    padding: 50px 60px;
+  }
+}
+
+@media (max-width:1080px) {
+  .container {
+    padding: 40px 50px;
+  }
+}
+
+@media (max-width:600px) {
+  .container {
+    padding: 20px 30px;
+  }
+}
+
+@media (max-width:400px) {
+  .container {
+    padding: 20px 10px;
+  }
+}
+body {
+font-family: 'Annie Use Your Telescope',
+cursive;
+font-family: 'Zen Loop',
+cursive;
+  background-color: #0a0a0a;
+  line-height: 1.42857143;
+  color: white;
+  text-transform: capitalize;
+  height: 2000px;
+}
+
+
+/* Start Header */
+
+header .head-one {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+header .head-one .links {
+  flex: 1;
+  text-align: start;
+}
+header .head-one .links ul {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 20px;
+}
+header .head-one .links ul li:nth-child(1) {
+  border-radius: 41% 59% 77% 23% / 30% 73% 27% 70%;
+  text-align: center;
+}
+header .head-one .links ul li:nth-child(2) {
+  border-radius: 41% 59% 82% 18% / 30% 16% 84% 70%;
+}
+header .head-one .links ul li:nth-child(3) {
+  border-radius: 87% 13% 82% 18% / 57% 83% 17% 43%;
+  text-align: center;
+}
+header .head-one .links ul li {
+  background-color: var(--mean-color);
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  transition: all var(--transition); 
+  position: relative;
+}
+header .head-one .links ul li:hover i {
+  animation: ico 4s infinite;
+  color: black;
+}
+@keyframes ico {
+  0% {
+    transform: translate(-70%, -50%);
+  }
+  50% {
+    transform: translate(-50%, -30%);
+  }
+  70% {
+    transform: translate(-40%, -60%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+header .head-one .links ul li i {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  font-size: 23px;
+  transition: var(--transition-long);
+}
+header .head-one .logo {
+  text-align: center;
+  cursor: pointer;
+  flex: 1;
+}
+header .head-one .contact {
+  text-align: end;
+  flex: 1;
+}
+header .head-one .contact a {
+  border: 2px solid var(--mean-color);
+  padding: 10px 20px;
+  color: var(--mean-color);
+  font-weight: 600;
+  font-size: 23px;
+  transition: var(--transition-long);
+}
+header .head-one .contact a:hover {
+  background-color: var(--mean-color);
+  color: white;
+  box-shadow: 6px 6px 0 0px var(--h1-color);
+}
+
+header .nav-bar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--black-color);
+}
+header .nav-bar.sticky {
+  top: 0;
+  left: 0;
+  position: fixed;
+  animation: flipInX;
+  animation-duration: 2s;
+}
+header .nav-bar.sticky ul li {
+  padding: 15px 30px;
+}
+header .nav-bar ul {
+  display: flex;
+  flex-flow: row nowrap;
+}
+header .nav-bar ul li {
+  position: relative;
+  padding: 10px 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+header .nav-bar ul li:nth-child(1)::before {
+  transition: var(--transition-long);
+  position: absolute;
+  content: '';
+  left: -100%;
+  top: 0; 
+  background-color: #e5be4a67;
+  width: 30px;
+  height: 100%;
+  transform: skew(40deg);
+  z-index: 1;
+}
+header .nav-bar ul li:nth-child(1):hover::before {
+  left: 0;
+}
+header .nav-bar ul li:nth-child(2):before {
+  transition: var(--transition-long);
+  position: absolute;
+  content: '';
+  top: -100%;
+  left: 0; 
+  background-color: #e5be4a67;
+  height: 30px;
+  width: 100%;
+  transform: skew(20deg);
+  z-index: 1;
+}
+header .nav-bar ul li:nth-child(2):hover::before {
+  top: 0;
+}
+header .nav-bar ul li:nth-child(3):before {
+  transition: var(--transition-long);
+  position: absolute;
+  content: '';
+  top: 0;
+  right: -200%; 
+  background-color: #e5be4a67;
+  width: 60px;
+  height: 100%;
+  transform: skew(70deg);
+  z-index: 1;
+}
+header .nav-bar ul li:nth-child(3):hover::before {
+  right: 0;
+}
+header .nav-bar ul li:nth-child(5):before {
+  transition: var(--transition-long);
+  position: absolute;
+  content: '';
+  top: 0;
+  left: -100%; 
+  background-color: #e5be4a67;
+  width: 40px;
+  height: 100%;
+  transform: skew(-170deg);
+  z-index: 1;
+}
+header .nav-bar ul li:nth-child(5):hover::before {
+  left: 0;
+}
+header .nav-bar ul li:nth-child(4):before {
+  transition: var(--transition-long);
+  position: absolute;
+  content: '';
+  bottom: -100%;
+  left: 0; 
+  background-color: #e5be4a67;
+  height: 40px;
+  width: 100%;
+  transform: skew(-170deg);
+  z-index: 1;
+}
+header .nav-bar ul li:nth-child(4):hover::before {
+  bottom: 0;
+}
+
+header .head-two {
+  background-image: url(https://preview.colorlib.com/theme/cakeshop/assets/img/hero/xh1_hero1.jpg.pagespeed.ic.k6lTpnWOqy.jpg);
+  height: 77vh;
+  background-size: cover;
+  background-position: 50% 0%;
+}
+header .head-two h1 {
+  width: 500px;
+  font-size: 120px;
+  color: white;
+  font-weight: bolder;
+}
+header .head-two button {
+  transition: var(--transition-long);
+  margin-top: 20px;
+  padding: 15px 35px;
+  font-size: 26px;
+  border: 2px solid var(--mean-color);
+  text-transform: uppercase;
+}
+header .head-two button:hover {
+  color: white;
+  background-color: transparent;
+  box-shadow: 8px 8px 0 0 var(--mean-color);
+}
+
+/* End Header */
